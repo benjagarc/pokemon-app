@@ -2,7 +2,7 @@ import { LenguageInterface } from "@/interfaces/pokemon";
 import { api } from "@lib/axios";
 
 export const getPokemonList = async () => {
-  const { data } = await api.get("/pokemon?limit=5");
+  const { data } = await api.get("/pokemon?limit=15");
   const pokemons = await Promise.all(
     data.results.map(async (poke: { name: string }) => {
       const [pokemonRes, speciesRes] = await Promise.all([
