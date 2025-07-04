@@ -7,5 +7,6 @@ export const usePokemonList = () => {
     queryFn: () => getPokemonList(),
     retry: 2,
     refetchOnWindowFocus: false,
+    staleTime: 1000 * 60 * 10,
   });
 };
