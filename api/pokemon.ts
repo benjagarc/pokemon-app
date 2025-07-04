@@ -36,3 +36,30 @@ export const getPokemonList = async () => {
 
   return pokemons;
 };
+
+export const getCharacterEssentials = async () => {
+  const { data } = await api.get("/pokemon?limit=3");
+
+  const pokemonEssentials = await Promise.all(
+    data.results.map(async (pokemon: { name: string; url: string }) => {
+      const id = pokemon.url.split("/pokemon")[1].replace("/", "").trim();
+      const { data } = await api.get(`/pokemon/${id}`);
+      return {
+        id: data.id,
+        name: data.name,
+        image: data.sprites.other["official-artwork"].front_default,
+        type: data.types[0].type.name,
+        description: `${data.name} is a ${data.types[0].type.name}-type Pokémon.`,
+      };
+    })
+  );
+
+  return pokemonEssentials;
+};
+
+export const getGamesEssentials = async () => {
+  const { data } = await api.get("/generation?limit=3");
+  return data.results;
+};
+
+
