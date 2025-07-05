@@ -1,6 +1,7 @@
 "use client";
 
 import SecondaryCard from "@/components/atoms/secondaryCard";
+import SkeletonCard from "@/components/atoms/SkeletonCard";
 import SearchBar from "@/components/organism/SearchBar";
 import { usePokemonList } from "@/hooks/usePokemonList";
 import { PokemonInterface } from "@/interfaces/pokemon";
@@ -14,7 +15,7 @@ export default function PokemonPage({ searchParams }: PageProps) {
   const page = Number(searchParams?.page || 1);
   const limit = 12;
   const offset = (page - 1) * limit;
-  const { data: pokemons } = usePokemonList(limit, offset);
+  const { data: pokemons, isLoading } = usePokemonList(limit, offset);
   const [pokemonSearched, setPokemonSearched] = useState(
     {} as PokemonInterface
   );
@@ -27,8 +28,13 @@ export default function PokemonPage({ searchParams }: PageProps) {
             <SecondaryCard key={pokemon.id} {...pokemon} />
           ))}
         {pokemonSearched?.id && <SecondaryCard {...pokemonSearched} />}
+        {isLoading && (
+          <>
+            <SkeletonCard /> <SkeletonCard /> <SkeletonCard />
+          </>
+        )}
       </div>
-      {!pokemonSearched?.id && (
+      {!pokemonSearched?.id && !isLoading && (
         <div className="flex justify-between text-white">
           {page > 1 && (
             <a href={`/pokemon?page=${page - 1}`} className="hover:underline">
