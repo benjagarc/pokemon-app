@@ -3,6 +3,7 @@ import { useFavoritesStore } from "@/stores/favorite";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FC } from "react";
+import Image from "next/image";
 
 export const SecondaryCard: FC<PokemonInterface> = ({
   id,
@@ -21,8 +22,13 @@ export const SecondaryCard: FC<PokemonInterface> = ({
   };
   return (
     <>
-      <div
+      <motion.div
         key={id}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.3, type: "spring" }}
         className="glass border border-gray-200 rounded-xl p-4 shadow-md text-center relative"
       >
         <motion.button
@@ -35,7 +41,13 @@ export const SecondaryCard: FC<PokemonInterface> = ({
         >
           {isFav ? "❤️" : "🤍"}
         </motion.button>
-        <img src={image} alt={name} className="w-32 h-32 mx-auto" />
+        <Image
+          src={image}
+          alt={name}
+          width={160}
+          height={160}
+          className="w-32 h-32 mx-auto"
+        />
         <h2 className="text-xl font-bold capitalize">{name}</h2>
         <p className="text-gray-500 text-sm">
           #{String(id).padStart(4, "0")} • {type}
@@ -49,7 +61,7 @@ export const SecondaryCard: FC<PokemonInterface> = ({
         >
           Ver más
         </Link>
-      </div>
+      </motion.div>
     </>
   );
 };
