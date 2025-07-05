@@ -30,9 +30,12 @@ export const getPaginatedPokemons = async (limit: number, offset: number) => {
   const { data } = await api.get(`/pokemon?limit=${limit}&offset=${offset}`);
   const pokemons = await Promise.all(
     data.results.map(async (poke: { name: string }) => {
-      const [pokemonRes, speciesRes] = await Promise.all([
+      const [pokemonRes] = await Promise.all([
         api.get(`/pokemon/${poke.name}`),
-        api.get(`/pokemon-species/${poke.name}`),
+      ]);
+
+      const [speciesRes] = await Promise.all([
+        api.get(`${pokemonRes.data.species.url.split("v2/")[1]}`),
       ]);
 
       const pokemon = pokemonRes.data;
@@ -60,4 +63,21 @@ export const getPaginatedPokemons = async (limit: number, offset: number) => {
   );
 
   return pokemons;
+};
+
+export const getPokemonByName = async (name: string) => {
+  const { data } = await api.get(`/pokemon/${name}`);
+  const url = data.species.url.split("v2/")[1];
+  const { data: dataSpecies } = await api.get(`${url}`);
+
+  return {
+    id: data.id,
+    name: data.name,
+    image: data.sprites.other["official-artwork"].front_default,
+    type: data.types[0].type.name,
+    description:
+      dataSpecies.flavor_text_entries
+        .find((entry: LenguageInterface) => entry.language.name === "en")
+        ?.flavor_text?.replace(/\f|\n/g, " ") ?? "No description available.",
+  };
 };
