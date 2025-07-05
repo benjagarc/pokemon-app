@@ -4,9 +4,11 @@ import { HomeProps } from "./interface";
 import { FC } from "react";
 import Carousel from "@/components/molecules/Carousel/Carousel";
 import { SwiperSlide } from "swiper/react";
-import PokemonCard from "@/components/atoms/Card";
-// import { useCharacterEsse4ntials } from "@/hooks/useCharactersEssentials";
-// import { useGamesEssentials } from "@/hooks/useGamesEssentials";
+import PokemonCard from "@/components/atoms/PrincipalCard";
+import SecondaryCard from "@/components/atoms/secondaryCard";
+import { useGamesEssentials } from "@/hooks/useGamesEssentials";
+import GameCard from "@/components/atoms/GameCard";
+import { Game } from "@/components/atoms/GameCard/interface";
 
 export const Home: FC<HomeProps> = ({ pokemonList }) => {
   const arrayLastEvolution = pokemonList.filter(
@@ -17,8 +19,7 @@ export const Home: FC<HomeProps> = ({ pokemonList }) => {
     (pokemon) => pokemon.id % 3 !== 0
   );
 
-  // const { data: essentialCharacters } = useCharacterEsse4ntials();
-  // const { data: games } = useGamesEssentials();
+  const { data: gamesEssentials } = useGamesEssentials(3);
 
   return (
     <>
@@ -31,17 +32,23 @@ export const Home: FC<HomeProps> = ({ pokemonList }) => {
           ))}
         </Carousel>
       </section>
+      <h3 className="text-2xl max-sm:text-2xl text-center font-extrabold capitalize text-black drop-shadow-md break-words my-5">
+        Characters Essentials
+      </h3>
 
-      {/* <section>
-          <h2 className="text-xl font-bold mb-4 text-white">
-            Games Essentials
-          </h2>
-          <ul className="list-disc ml-5 text-white">
-            {games?.map((game) => (
-              <li key={game.name}>{game.name}</li>
-            ))}
-          </ul>
-        </section> */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 mt-5 pt-5 place-items-center">
+        {pokemonEssentials.slice(0, 3).map((pokemon) => (
+          <SecondaryCard key={pokemon?.id} {...pokemon} />
+        ))}
+      </section>
+      <h3 className="text-2xl max-sm:text-2xl text-center font-extrabold capitalize text-black drop-shadow-md break-words my-8">
+        Games Essentials
+      </h3>
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 mt-5 pt-5 place-items-center">
+        {gamesEssentials?.map((game: Game) => (
+          <GameCard key={game?.name} game={game} />
+        ))}
+      </section>
     </>
   );
 };
