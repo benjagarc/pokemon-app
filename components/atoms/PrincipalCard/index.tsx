@@ -23,11 +23,11 @@ export const PokemonCard: FC<PokemonInterface> = ({
           alt={name}
           width={160}
           height={160}
-          className="w-full h-full object-contain mx-auto mb-2 drop-shadow-lg"
+          className="min-xl:w-5/6 min-xl:h-5/6 w-full h-full object-contain mx-auto mb-2 drop-shadow-lg"
         />
         <div className="flex flex-col justify-center p-2">
           <h3 className="text-2xl font-bold capitalize">{name}</h3>
-          <h4 className="text-lg font-semibold text-pokemon-red mb-1">
+          <h4 className="text-lg max-sm:text-base self-center w-fit rounded font-semibold bg-pokemon-red text-white inline-block mb-1 px-2 py-1">
             #{String(id).padStart(4, "0")} ° {type}
           </h4>
           <p className="text-sm text-zinc-700 italic line-clamp-3 mb-3">
@@ -36,7 +36,7 @@ export const PokemonCard: FC<PokemonInterface> = ({
 
           <Link
             href={`/pokemon/${name}`}
-            className="inline-block bg-pokemon-yellow text-pokemon-black text-xs px-4 py-2 rounded hover:bg-yellow-400 transition"
+            className="inline-block self-center w-fit bg-pokemon-yellow text-pokemon-black text-xs px-4 py-2 rounded hover:bg-yellow-400 transition"
           >
             Show more
           </Link>
