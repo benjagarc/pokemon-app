@@ -29,7 +29,7 @@ export const SecondaryCard: FC<PokemonInterface> = ({
         exit={{ opacity: 0, scale: 0.9 }}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3, type: "spring" }}
-        className="glass border border-gray-200 rounded-xl p-4 shadow-md text-center relative"
+        className="bg-pokemon-glass rounded-xl p-4 shadow-lg text-center relative"
       >
         <motion.button
           onClick={toggleFavorite}
@@ -48,11 +48,11 @@ export const SecondaryCard: FC<PokemonInterface> = ({
           height={160}
           className="w-32 h-32 mx-auto"
         />
-        <h2 className="text-xl font-bold capitalize">{name}</h2>
-        <p className="text-gray-500 text-sm">
+        <h2 className="text-lg font-bold capitalize">{name}</h2>
+        <p className="inline-block bg-pokemon-red text-white text-sm font-bold px-3 py-1 rounded shadow-md">
           #{String(id).padStart(4, "0")} • {type}
         </p>
-        <p className="italic text-gray-700 text-sm mt-2 line-clamp-2">
+        <p className="italic text-gray-700 text-xs mt-2 line-clamp-2">
           {description}
         </p>
         <Link
