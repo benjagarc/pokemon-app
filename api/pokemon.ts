@@ -21,11 +21,6 @@ export const getCharacterEssentials = async () => {
   return pokemonEssentials;
 };
 
-export const getGamesEssentials = async () => {
-  const { data } = await api.get("/generation?limit=3");
-  return data.results;
-};
-
 export const getPaginatedPokemons = async (limit: number, offset: number) => {
   const { data } = await api.get(`/pokemon?limit=${limit}&offset=${offset}`);
   const pokemons = await Promise.all(
