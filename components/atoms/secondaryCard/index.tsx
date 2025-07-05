@@ -1,9 +1,12 @@
+"use-client";
+
 import { PokemonInterface } from "@/interfaces/pokemon";
 import { useFavoritesStore } from "@/stores/favorite";
 import { motion } from "framer-motion";
 import { FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export const SecondaryCard: FC<PokemonInterface> = ({
   id,
@@ -17,9 +20,10 @@ export const SecondaryCard: FC<PokemonInterface> = ({
   const remove = useFavoritesStore((state) => state.removeFavorite);
 
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleCardClick = () => {
-    router.push(`/pokemon/${name}`);
+    router.push(pathname === "/" ? "/pokemon" : `/pokemon/${name}`);
   };
   const toggleFavorite = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -44,16 +48,18 @@ export const SecondaryCard: FC<PokemonInterface> = ({
         transition={{ duration: 0.3, type: "spring" }}
         className="bg-pokemon-glass rounded-xl p-4 shadow-lg text-center relative cursor-pointer"
       >
-        <motion.button
-          onClick={(e) => handleFavClick(e)}
-          className="absolute top-3 right-3 text-xl"
-          aria-label="Agregar a favoritos"
-          whileTap={{ scale: 0.8 }}
-          animate={{ scale: isFav ? 1.2 : 1, rotate: isFav ? 20 : 0 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          {isFav ? "❤️" : "🤍"}
-        </motion.button>
+        {pathname !== "/" && (
+          <motion.button
+            onClick={(e) => handleFavClick(e)}
+            className="absolute top-3 right-3 text-xl cursor-pointer"
+            aria-label="Agregar a favoritos"
+            whileTap={{ scale: 0.8 }}
+            animate={{ scale: isFav ? 1.2 : 1, rotate: isFav ? 20 : 0 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            {isFav ? "❤️" : "🤍"}
+          </motion.button>
+        )}
         <Image
           src={image}
           alt={name}
