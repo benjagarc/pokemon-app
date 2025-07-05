@@ -30,7 +30,9 @@ export default function PokemonPage({ searchParams }: PageProps) {
         {pokemonSearched?.id && <SecondaryCard {...pokemonSearched} />}
         {isLoading && (
           <>
-            <SkeletonCard /> <SkeletonCard /> <SkeletonCard />
+            {Array(12).fill(0).map((_, index) => (
+              <SkeletonCard key={index} />
+            ))}
           </>
         )}
       </div>
