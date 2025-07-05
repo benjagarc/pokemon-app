@@ -28,7 +28,7 @@ export const PokemonCard: FC<PokemonInterface> = ({
         <div className="flex flex-col justify-center p-2">
           <h3 className="text-2xl font-bold capitalize">{name}</h3>
           <h4 className="text-lg font-semibold text-pokemon-red mb-1">
-            #{String(id).padStart(3, "0")} ° {type}
+            #{String(id).padStart(4, "0")} ° {type}
           </h4>
           <p className="text-sm text-zinc-700 italic line-clamp-3 mb-3">
             {description}
