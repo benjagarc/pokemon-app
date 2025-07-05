@@ -1,6 +1,6 @@
 export interface PokemonInterface {
   description: string;
-  genus: string;
+  genus?: string;
   id: number;
   image: string;
   name: string;
