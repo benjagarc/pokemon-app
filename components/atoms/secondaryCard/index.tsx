@@ -62,7 +62,7 @@ export const SecondaryCard: FC<PokemonInterface> = ({
           className="w-32 h-32 mx-auto"
         />
         <h2 className="text-lg font-bold capitalize">{name}</h2>
-        <p className="inline-block bg-pokemon-red text-white text-sm font-bold px-3 py-1 m-1 rounded shadow-md">
+        <p className="inline-block bg-pokemon-red text-white text-xs font-bold px-3 py-1 m-1 rounded-full shadow-md">
           #{String(id).padStart(4, "0")} • {type}
         </p>
         <p className="italic text-gray-700 text-xs mt-2 line-clamp-2">
