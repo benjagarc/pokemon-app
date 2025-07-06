@@ -70,8 +70,8 @@ export const Home: FC<HomeProps> = ({ pokemonList }) => {
             </>
           }
         >
-          {data?.games?.map((game: Game) => (
-            <GameCard key={game?.name} game={game} />
+          {data?.games?.map((game: Game, index: number) => (
+            <GameCard key={game?.name} game={game} index={index} />
           ))}
         </Suspense>
       </section>

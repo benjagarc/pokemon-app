@@ -21,8 +21,8 @@ export const ContentPokemon: FC<ContentPokemonProps> = ({ currentPage }) => {
     <>
       <Breadcrumb />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-        {data?.games?.map((game: Game) => (
-          <GameCard key={game?.name} game={game} />
+        {data?.games?.map((game: Game, index: number) => (
+          <GameCard key={game?.name} game={game} index={index} />
         ))}
         {isLoading && (
           <>

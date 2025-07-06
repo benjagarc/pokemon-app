@@ -7,7 +7,7 @@ import { GameCardProps } from "./interface";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
-export const GameCard: FC<GameCardProps> = ({ game }) => {
+export const GameCard: FC<GameCardProps> = ({ game, index }) => {
   const router = useRouter();
   const pathname = usePathname();
   const handleCardClick = () => {
@@ -30,6 +30,7 @@ export const GameCard: FC<GameCardProps> = ({ game }) => {
             alt="Pokébola"
             fill
             className="object-contain opacity-800"
+            priority={index < 3}
           />
         </div>
 

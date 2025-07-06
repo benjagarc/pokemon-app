@@ -1,5 +1,6 @@
 export interface GameCardProps {
   game: Game;
+  index: number;
 }
 
 export interface Game {
