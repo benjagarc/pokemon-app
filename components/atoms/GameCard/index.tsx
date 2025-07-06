@@ -13,24 +13,21 @@ export const GameCard: FC<GameCardProps> = ({ game }) => {
         whileTap={{ scale: 0.97 }}
         className="bg-pokemon-glass rounded-xl p-4 flex flex-col items-center shadow-lg text-center relative cursor-pointer w-full"
       >
-        {/* Contenedor de la Pokébola más grande */}
-        <div className="w-24 h-24 relative flex-shrink-0 mb-2">
+        <div className="w-50 h-20 relative flex-shrink-0 mb-2">
           {" "}
-          {/* Aumentado a w-24 h-24 y añadido margen inferior */}
           <Image
-            src="/pokeball.png"
+            src="/pokemon-logo.png"
             alt="Pokébola"
             fill
-            className="object-contain opacity-70"
+            className="object-contain opacity-800"
           />
         </div>
-        {/* El texto ya está en columna por defecto, pero lo mantenemos en su div */}
+
         <div className="flex flex-col items-center">
-          {" "}
-          {/* Centramos el texto también */}
           <h3 className="text-lg font-bold capitalize text-black">
             {game.name}
           </h3>
+          <p className="text-sm text-zinc-700">Version</p>
         </div>
       </motion.div>
     </>
