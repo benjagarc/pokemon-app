@@ -3,10 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { PopkemonDetailInterface } from "@/interfaces/pokemon";
-import { FC } from "react";
-// import FavoriteButton from "@/components/atoms/FavoriteButton";
+import {
+  PokemonInterface,
+  PopkemonDetailInterface,
+} from "@/interfaces/pokemon";
+import { FC, useState } from "react";
 import dynamic from "next/dynamic";
+import SearchBar from "@/components/organism/SearchBar";
+import { usePokemonList } from "@/hooks/usePokemonList";
+import SecondaryCard from "@/components/atoms/secondaryCard";
+import SkeletonCard from "@/components/atoms/SkeletonCard";
 
 const FavoriteButton = dynamic(
   () => import("@/components/atoms/FavoriteButton"),
@@ -24,6 +30,15 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
   types,
   weight,
 }) => {
+  const [pokemonSearched, setPokemonSearched] = useState(
+    {} as PokemonInterface
+  );
+
+  const [randomOffset] = useState(() => {
+    return Math.floor(Math.random() * 1000);
+  });
+
+  const { data: pokemons, isLoading } = usePokemonList(4, randomOffset);
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -116,6 +131,23 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
           </motion.div>
         </motion.div>
       </motion.div>
+      <SearchBar handleResults={(result) => setPokemonSearched(result)} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols- xl:grid-cols-2 gap-6 text-black">
+        {!pokemonSearched?.id &&
+          pokemons?.map((pokemon) => (
+            <SecondaryCard key={pokemon.id} {...pokemon} />
+          ))}
+        {pokemonSearched?.id && <SecondaryCard {...pokemonSearched} />}
+        {isLoading && (
+          <>
+            {Array(4)
+              .fill(0)
+              .map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+          </>
+        )}
+      </div>
     </motion.div>
   );
 };
