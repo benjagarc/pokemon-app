@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +16,8 @@ export const Navbar = () => {
     { id: 2, label: "Pokemon", href: "/pokemon" },
     { id: 3, label: "Favorites", href: "/favorites" },
   ];
+
+  const pathname = usePathname();
 
   return (
     <motion.header
@@ -40,7 +43,9 @@ export const Navbar = () => {
             <li key={id}>
               <Link
                 href={href}
-                className="hover:text-yellow-300 transition drop-shadow-md"
+                className={`hover:text-pokemon-yellow transition drop-shadow-md ${
+                  pathname.includes(href) ? "text-pokemon-yellow" : ""
+                }`}
               >
                 {label}
               </Link>
@@ -71,7 +76,9 @@ export const Navbar = () => {
               <Link
                 onClick={toggleMenu}
                 href={href}
-                className="hover:text-yellow-300 transition drop-shadow-md"
+                className={`hover:text-pokemon-yellow transition drop-shadow-md ${
+                  pathname.includes(href) ? "text-pokemon-yellow" : ""
+                }`}
               >
                 {label}
               </Link>
