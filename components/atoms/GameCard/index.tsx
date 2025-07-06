@@ -1,14 +1,24 @@
 "use client";
 
-import { FC } from "react";
+import { FC, memo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GameCardProps } from "./interface";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export const GameCard: FC<GameCardProps> = ({ game }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const handleCardClick = () => {
+    if (!pathname.includes("/games")) {
+      router.push("/games");
+    }
+  };
   return (
     <>
       <motion.div
+        onClick={handleCardClick}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         className="bg-pokemon-glass rounded-xl p-4 flex flex-col items-center shadow-xl text-center relative cursor-pointer w-full"
@@ -34,4 +44,4 @@ export const GameCard: FC<GameCardProps> = ({ game }) => {
   );
 };
 
-export default GameCard;
+export default memo(GameCard);
