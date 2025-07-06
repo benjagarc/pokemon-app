@@ -24,7 +24,7 @@ export default function RootLayout({
           <h1 className="text-xl tracking-wide">Pokédex App</h1>
         </nav>
         <main className="max-w-7xl mx-auto p-6 mt-6">
-          <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/20 shadow-lg p-6">
+          <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/20 shadow-lg p-6 min-h-[80vh]">
             <ReactQueryProvider>{children}</ReactQueryProvider>
           </div>
         </main>
