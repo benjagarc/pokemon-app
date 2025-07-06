@@ -1,4 +1,8 @@
-import { LenguageInterface } from "@/interfaces/pokemon";
+import {
+  abilityInterface,
+  LenguageInterface,
+  typesPokemonInterface,
+} from "@/interfaces/pokemon";
 import { api } from "@lib/axios";
 
 export const getGamesEssentials = async (limit: number) => {
@@ -55,9 +59,13 @@ export const getPokemonByName = async (name: string) => {
     name: data.name,
     image: data.sprites.other["official-artwork"].front_default,
     type: data.types[0].type.name,
+    abilities: data.abilities.map((a: abilityInterface) => a.ability.name),
     description:
       dataSpecies.flavor_text_entries
         .find((entry: LenguageInterface) => entry.language.name === "en")
         ?.flavor_text?.replace(/\f|\n/g, " ") ?? "No description available.",
+    types: data.types.map((t: typesPokemonInterface) => t.type.name),
+    height: data.height,
+    weight: data.weight,
   };
 };
