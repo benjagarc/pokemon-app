@@ -96,7 +96,7 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
               image={image}
               type={type}
               description={description}
-              size="text-3xl min-md: top-[-0.685rem] right-[14rem] max-sm:right-[13.5rem]"
+              size="text-3xl min-md: top-[-0.685rem] right-[100%]"
             />
           </div>
 
