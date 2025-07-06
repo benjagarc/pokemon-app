@@ -7,7 +7,7 @@ import { api } from "@lib/axios";
 
 export const getGamesEssentials = async (limit: number) => {
   const { data } = await api.get(`/version?limit=${limit}`);
-  return data.results;
+  return { games: data.results, count: data.count };
 };
 
 export const getPaginatedPokemons = async (limit: number, offset: number) => {

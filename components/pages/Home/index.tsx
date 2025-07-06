@@ -24,7 +24,7 @@ export const Home: FC<HomeProps> = ({ pokemonList }) => {
     [pokemonList]
   );
 
-  const { data: gamesEssentials } = useGamesEssentials(3);
+  const { data } = useGamesEssentials(3);
   const fakeCards = Array(3).fill(0);
 
   return (
@@ -70,7 +70,7 @@ export const Home: FC<HomeProps> = ({ pokemonList }) => {
             </>
           }
         >
-          {gamesEssentials?.map((game: Game) => (
+          {data?.games?.map((game: Game) => (
             <GameCard key={game?.name} game={game} />
           ))}
         </Suspense>
