@@ -12,7 +12,7 @@ export const Navbar = () => {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const arrayRoutes = [
-    { id: 1, label: "Games", href: "/game" },
+    { id: 1, label: "Games", href: "/games" },
     { id: 2, label: "Pokemon", href: "/pokemon" },
     { id: 3, label: "Favorites", href: "/favorites" },
   ];
