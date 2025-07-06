@@ -1,8 +1,6 @@
 import ContentGames from "./content";
 
-interface Props {
-  searchParams: { page?: string };
-}
+type params = Promise<{ page: string }>;
 
 import type { Metadata } from "next";
 
@@ -36,7 +34,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PokemonPage({ searchParams }: Props) {
+export default async function PokemonPage({
+  searchParams,
+}: {
+  searchParams: params;
+}) {
   const { page } = await searchParams;
 
   return (
