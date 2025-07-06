@@ -40,7 +40,6 @@ export default async function PokemonPage({
   return (
     <>
       <ContentPokemon currentPage={page ?? ""} />
-      <h1>{page}</h1>
     </>
   );
 }
