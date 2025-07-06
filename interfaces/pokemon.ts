@@ -5,6 +5,7 @@ export interface PokemonInterface {
   image: string;
   name: string;
   type: string;
+  index?: number;
 }
 
 export interface PopkemonDetailInterface extends PokemonInterface {

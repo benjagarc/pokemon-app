@@ -52,8 +52,8 @@ export const Home: FC<HomeProps> = ({ pokemonList }) => {
             </>
           }
         >
-          {pokemonEssentials.slice(0, 3).map((pokemon) => (
-            <SecondaryCard key={pokemon?.id} {...pokemon} />
+          {pokemonEssentials.slice(0, 3).map((pokemon, index) => (
+            <SecondaryCard key={pokemon?.id} {...pokemon} index={index} />
           ))}
         </Suspense>
       </section>
