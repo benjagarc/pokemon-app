@@ -1,56 +1,45 @@
-"use client";
+import ContentPokemon from "./content";
 
-import SecondaryCard from "@/components/atoms/secondaryCard";
-import SkeletonCard from "@/components/atoms/SkeletonCard";
-import SearchBar from "@/components/organism/SearchBar";
-import { usePokemonList } from "@/hooks/usePokemonList";
-import { PokemonInterface } from "@/interfaces/pokemon";
-import { useState } from "react";
-
-interface PageProps {
+interface Props {
   searchParams: { page?: string };
 }
 
-export default function PokemonPage({ searchParams }: PageProps) {
-  const page = Number(searchParams?.page || 1);
-  const limit = 12;
-  const offset = (page - 1) * limit;
-  const { data: pokemons, isLoading } = usePokemonList(limit, offset);
-  const [pokemonSearched, setPokemonSearched] = useState(
-    {} as PokemonInterface
-  );
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pokémon List | Pokédex App",
+  description:
+    "Browse all Pokémon from the official Pokédex. Discover their types, stats, and mark your favorites.",
+  keywords: [
+    "pokédex",
+    "pokemon list",
+    "all pokemon",
+    "nextjs pokedex",
+    "pokemon search",
+    "pokemon collection",
+    "react pokémon app",
+  ],
+  openGraph: {
+    title: "All Pokémon | Pokédex App",
+    description:
+      "Explore every Pokémon in the Pokédex. View details, search by name, and manage your favorites.",
+    // url: "https://poke-api.com/favorites",
+    siteName: "Pokédex App",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default async function PokemonPage({ searchParams }: Props) {
+  const { page } = await searchParams;
+
   return (
     <>
-      <SearchBar handleResults={(result) => setPokemonSearched(result)} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-        {!pokemonSearched?.id &&
-          pokemons?.map((pokemon) => (
-            <SecondaryCard key={pokemon.id} {...pokemon} />
-          ))}
-        {pokemonSearched?.id && <SecondaryCard {...pokemonSearched} />}
-        {isLoading && (
-          <>
-            {Array(12).fill(0).map((_, index) => (
-              <SkeletonCard key={index} />
-            ))}
-          </>
-        )}
-      </div>
-      {!pokemonSearched?.id && !isLoading && (
-        <div className="flex justify-between text-white">
-          {page > 1 && (
-            <a href={`/pokemon?page=${page - 1}`} className="hover:underline">
-              ← Prev
-            </a>
-          )}
-          <a
-            href={`/pokemon?page=${page + 1}`}
-            className="hover:underline ml-auto"
-          >
-            Next →
-          </a>
-        </div>
-      )}
+      <ContentPokemon currentPage={page ?? ""} />
+      <h1>{page}</h1>
     </>
   );
 }

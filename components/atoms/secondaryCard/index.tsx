@@ -54,6 +54,7 @@ export const SecondaryCard: FC<PokemonInterface> = ({
           width={160}
           height={160}
           className="w-32 h-32 mx-auto"
+          priority
         />
         <h2 className="text-lg font-bold capitalize">{name}</h2>
         <p className="inline-block bg-pokemon-red text-white text-xs font-bold px-3 py-1 m-1 rounded-full shadow-md">

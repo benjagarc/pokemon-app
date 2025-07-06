@@ -24,6 +24,7 @@ export const PokemonCard: FC<PokemonInterface> = ({
           width={160}
           height={160}
           className="min-xl:w-5/6 min-xl:h-5/6 w-full h-full object-contain mx-auto mb-2 drop-shadow-lg"
+          priority
         />
         <div className="flex flex-col justify-center p-2 sm:text-left text-center gap-2">
           <h3 className="text-3xl max-sm:text-2xl font-extrabold capitalize text-pokemon-text drop-shadow-sm break-words">
