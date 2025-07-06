@@ -33,7 +33,7 @@ export const ContentFavorite = () => {
       )}
 
       {!loading && favorites?.length === 0 && (
-        <p className="text-pokemon-red">
+        <p className="inline-block bg-pokemon-red text-white text-lg font-bold px-3 py-1 m-1 | shadow-md">
           You haven&apos;t added any Pokémon to favorites yet
         </p>
       )}
