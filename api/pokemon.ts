@@ -46,7 +46,12 @@ export const getPaginatedPokemons = async (limit: number, offset: number) => {
     })
   );
 
-  return pokemons;
+  return {
+    pokemons,
+    next: data.next,
+    previous: data.previous,
+    count: data.count,
+  };
 };
 
 export const getPokemonByName = async (name: string) => {
