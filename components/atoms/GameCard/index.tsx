@@ -11,7 +11,7 @@ export const GameCard: FC<GameCardProps> = ({ game }) => {
       <motion.div
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="bg-pokemon-glass rounded-xl p-4 flex flex-col items-center shadow-lg text-center relative cursor-pointer w-full"
+        className="bg-pokemon-glass rounded-xl p-4 flex flex-col items-center shadow-xl text-center relative cursor-pointer w-full"
       >
         <div className="w-50 h-20 relative flex-shrink-0 mb-2">
           {" "}
