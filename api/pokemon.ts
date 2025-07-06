@@ -5,8 +5,10 @@ import {
 } from "@/interfaces/pokemon";
 import { api } from "@lib/axios";
 
-export const getGamesEssentials = async (limit: number) => {
-  const { data } = await api.get(`/version?limit=${limit}`);
+export const getGamesEssentials = async (limit: number, offset?: number) => {
+  const { data } = await api.get(
+    `/version?limit=${limit}${offset ? `&offset=${offset}` : ""}`.trim()
+  );
   return { games: data.results, count: data.count };
 };
 
