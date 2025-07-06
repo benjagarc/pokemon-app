@@ -5,7 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { PopkemonDetailInterface } from "@/interfaces/pokemon";
 import { FC } from "react";
-import FavoriteButton from "@/components/atoms/FavoriteButton";
+// import FavoriteButton from "@/components/atoms/FavoriteButton";
+import dynamic from "next/dynamic";
+
+const FavoriteButton = dynamic(
+  () => import("@/components/atoms/FavoriteButton"),
+  { ssr: false }
+);
 
 export const ContentName: FC<PopkemonDetailInterface> = ({
   abilities,

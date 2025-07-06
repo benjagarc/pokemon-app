@@ -6,7 +6,12 @@ import { FC, memo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import FavoriteButton from "@/components/atoms/FavoriteButton";
+import dynamic from "next/dynamic";
+
+const FavoriteButton = dynamic(
+  () => import("@/components/atoms/FavoriteButton"),
+  { ssr: false }
+);
 
 export const SecondaryCard: FC<PokemonInterface> = ({
   id,
