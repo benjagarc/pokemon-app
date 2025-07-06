@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     siteName: "Pokédex App",
     type: "website",
   },
+  icons: {
+    icon: "favicon.png",
+  },
 };
 export default function FavoritesPage() {
   return (
