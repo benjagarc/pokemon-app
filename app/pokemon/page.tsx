@@ -31,9 +31,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: "favicon.png"
-  }
 };
 
 export default async function PokemonPage({ searchParams }: Props) {

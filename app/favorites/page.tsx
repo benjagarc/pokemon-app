@@ -18,10 +18,7 @@ export const metadata: Metadata = {
     // url: "https://poke-api.com/favorites",
     siteName: "Pokédex App",
     type: "website",
-  },
-  icons: {
-    icon: "favicon.png",
-  },
+  }, 
 };
 export default function FavoritesPage() {
   return (

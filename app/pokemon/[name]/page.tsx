@@ -44,8 +44,5 @@ export async function generateMetadata({
         },
       ],
     },
-    icons: {
-      icon: "favicon.png",
-    },
   };
 }
