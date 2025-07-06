@@ -1,7 +1,7 @@
 "use client";
 
 import { HomeProps } from "./interface";
-import { FC, Suspense } from "react";
+import { FC, Suspense, useMemo } from "react";
 import Carousel from "@/components/molecules/Carousel/Carousel";
 import { SwiperSlide } from "swiper/react";
 import PokemonCard from "@/components/atoms/PrincipalCard";
@@ -14,12 +14,14 @@ const SecondaryCard = dynamic(() => import("@/components/atoms/secondaryCard"));
 const GameCard = dynamic(() => import("@/components/atoms/GameCard"));
 
 export const Home: FC<HomeProps> = ({ pokemonList }) => {
-  const arrayLastEvolution = pokemonList.filter(
-    (pokemon) => pokemon.id % 3 === 0
+  const arrayLastEvolution = useMemo(
+    () => pokemonList.filter((pokemon) => pokemon.id % 3 === 0),
+    [pokemonList]
   );
 
-  const pokemonEssentials = pokemonList.filter(
-    (pokemon) => pokemon.id % 3 !== 0
+  const pokemonEssentials = useMemo(
+    () => pokemonList.filter((pokemon) => pokemon.id % 3 !== 0),
+    [pokemonList]
   );
 
   const { data: gamesEssentials } = useGamesEssentials(3);
