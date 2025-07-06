@@ -32,6 +32,7 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
         image={image}
         type={type}
         description={description}
+        size="text-3xl"
       />
       <motion.div whileHover={{ scale: 1.05 }}>
         <Link

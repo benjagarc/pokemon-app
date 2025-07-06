@@ -3,12 +3,10 @@ import { getPokemonByName } from "@api/pokemon";
 import ContentName from "./content";
 import { Metadata } from "next";
 
-interface Props {
-  params: { name: string };
-}
+type Params = Promise<{ name: string }>;
 
-export default async function PokemonPage({ params }: Props) {
-  const { name } = params;
+export default async function PokemonPage({ params }: { params: Params }) {
+  const { name } = await params;
   const pokemon = await getPokemonByName(name);
 
   if (!pokemon) return notFound();
@@ -19,9 +17,10 @@ export default async function PokemonPage({ params }: Props) {
 export async function generateMetadata({
   params,
 }: {
-  params: { name: string };
+  params: Params;
 }): Promise<Metadata> {
-  const pokemon = await getPokemonByName(params.name);
+  const { name } = await params;
+  const pokemon = await getPokemonByName(name);
 
   if (!pokemon) {
     return {
