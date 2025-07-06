@@ -1,5 +1,6 @@
 "use client";
 
+import Breadcrumb from "@/components/atoms/BreadCrumb";
 import SecondaryCard from "@/components/atoms/secondaryCard";
 import SkeletonCard from "@/components/atoms/SkeletonCard";
 import SearchBar from "@/components/organism/SearchBar";
@@ -21,6 +22,7 @@ export const ContentPokemon: FC<ContentPokemonProps> = ({ currentPage }) => {
   );
   return (
     <>
+      <Breadcrumb />
       <SearchBar handleResults={(result) => setPokemonSearched(result)} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         {!pokemonSearched?.id &&

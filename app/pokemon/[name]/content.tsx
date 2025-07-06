@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   PokemonInterface,
@@ -13,6 +13,7 @@ import SearchBar from "@/components/organism/SearchBar";
 import { usePokemonList } from "@/hooks/usePokemonList";
 import SecondaryCard from "@/components/atoms/secondaryCard";
 import SkeletonCard from "@/components/atoms/SkeletonCard";
+import Breadcrumb from "@/components/atoms/BreadCrumb";
 
 const FavoriteButton = dynamic(
   () => import("@/components/atoms/FavoriteButton"),
@@ -55,14 +56,7 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
         description={description}
         size="text-3xl"
       />
-      <motion.div whileHover={{ scale: 1.05 }}>
-        <Link
-          href="/"
-          className="inline-block mb-4 text-blue-300 underline text-sm hover:text-blue-200 transition"
-        >
-          ← Go back
-        </Link>
-      </motion.div>
+      <Breadcrumb />
 
       <motion.h1
         className="text-4xl max-sm:text-2xl font-bold capitalize mb-4 max-sm:mb-1 drop-shadow-lg"

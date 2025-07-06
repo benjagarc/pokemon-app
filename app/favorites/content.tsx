@@ -1,5 +1,6 @@
 "use client";
 
+import Breadcrumb from "@/components/atoms/BreadCrumb";
 import SecondaryCard from "@/components/atoms/secondaryCard";
 import { useFavoritesStore } from "@/stores/favorite";
 
@@ -8,6 +9,7 @@ export const ContentFavorite = () => {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-8">
+      <Breadcrumb />
       <h1 className="text-3xl font-bold mb-6 text-white">
         Your Favorite Pokémon
       </h1>
