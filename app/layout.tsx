@@ -3,6 +3,7 @@ import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { ReactQueryProvider } from "@/components/Providers/ReactQueryProvider";
 import Navbar from "@/components/molecules/Navbar";
+import Head from "next/head";
 
 const pixelFont = Press_Start_2P({ subsets: ["latin"], weight: "400" });
 
@@ -57,6 +58,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="preconnect" href="https://pokeapi.co" />
+        <link rel="dns-prefetch" href="https://pokeapi.co" />
+      </Head>
       <body
         className={`${pixelFont.className} relative bg-gradient-to-br from-pokemon-red from-25% via-white/10 via-60% to-pokemon-blue to-80% min-h-screen`}
       >
