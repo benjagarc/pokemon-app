@@ -45,6 +45,9 @@ export const metadata: Metadata = {
       "A beautifully animated Pokédex app built with Next.js, Tailwind, and PokéAPI.",
     images: ["/og-image.png"],
   },
+  icons: {
+    icon: "favicon.png"
+  }
 };
 
 export default function RootLayout({
