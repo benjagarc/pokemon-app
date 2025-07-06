@@ -48,14 +48,6 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
       transition={{ duration: 0.4 }}
       className="max-w-3xl mx-auto px-6 py-10 text-white max-sm:px-1 max-sm:py-3 relative"
     >
-      <FavoriteButton
-        id={id}
-        name={name}
-        image={image}
-        type={type}
-        description={description}
-        size="text-3xl"
-      />
       <Breadcrumb />
 
       <motion.h1
@@ -75,7 +67,7 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
         transition={{ delay: 0.3 }}
       >
         <motion.div
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-4 "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -85,10 +77,10 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
             alt={name}
             width={200}
             height={200}
-            className="drop-shadow-lg min-xl:w-4/7 min-xl:h-4/7 w-full h-full"
+            className="drop-shadow-lg min-md:w-4/7 min-md:h-4/7 w-full h-full"
           />
 
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-2 justify-center relative">
             {types.map((type: string) => (
               <motion.span
                 key={type}
@@ -98,6 +90,14 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
                 {type}
               </motion.span>
             ))}
+            <FavoriteButton
+              id={id}
+              name={name}
+              image={image}
+              type={type}
+              description={description}
+              size="text-3xl min-md: top-[-0.685rem] right-[14rem] max-sm:right-[13.5rem]"
+            />
           </div>
 
           <p className="mt-4 italic text-zinc-700  text-center max-w-md">
