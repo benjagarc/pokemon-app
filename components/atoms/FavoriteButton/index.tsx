@@ -32,7 +32,7 @@ export const FavoriteButton: FC<FavoriteButtonProps> = ({
     <>
       <motion.button
         onClick={(e) => handleFavClick(e)}
-        className={`absolute top-3 right-3 ${
+        className={`absolute top-3 right-3 drop-shadow-lg ${
           size || "text-xl"
         }  cursor-pointer`}
         aria-label="Agregar a favoritos"
