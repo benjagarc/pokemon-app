@@ -1,7 +1,7 @@
 import { PokemonInterface } from "@/interfaces/pokemon";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, memo } from "react";
 import Image from "next/image";
 
 export const PokemonCard: FC<PokemonInterface> = ({
@@ -50,4 +50,4 @@ export const PokemonCard: FC<PokemonInterface> = ({
   );
 };
 
-export default PokemonCard;
+export default memo(PokemonCard);

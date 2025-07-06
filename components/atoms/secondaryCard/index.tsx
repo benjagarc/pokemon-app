@@ -2,7 +2,7 @@
 
 import { PokemonInterface } from "@/interfaces/pokemon";
 import { motion } from "framer-motion";
-import { FC } from "react";
+import { FC, memo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -62,4 +62,4 @@ export const SecondaryCard: FC<PokemonInterface> = ({
   );
 };
 
-export default SecondaryCard;
+export default memo(SecondaryCard);
