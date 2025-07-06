@@ -39,7 +39,7 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
     return Math.floor(Math.random() * 1000);
   });
 
-  const { data: pokemons, isLoading } = usePokemonList(4, randomOffset);
+  const { data, isLoading } = usePokemonList(4, randomOffset);
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -128,7 +128,7 @@ export const ContentName: FC<PopkemonDetailInterface> = ({
       <SearchBar handleResults={(result) => setPokemonSearched(result)} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols- xl:grid-cols-2 gap-6 text-black">
         {!pokemonSearched?.id &&
-          pokemons?.map((pokemon) => (
+          data?.pokemons?.map((pokemon) => (
             <SecondaryCard key={pokemon.id} {...pokemon} />
           ))}
         {pokemonSearched?.id && <SecondaryCard {...pokemonSearched} />}
