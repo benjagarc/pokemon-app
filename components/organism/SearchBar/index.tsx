@@ -28,11 +28,12 @@ export const SearchBar: FC<SearchBarProps> = ({ handleResults }) => {
   return (
     <div className="mb-8 space-y-4 max-w-100%">
       <input
+        tabIndex={-1}
         type="text"
-        placeholder="Buscar Pokémon por nombre"
+        placeholder="Search Pokémon by name"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        className="w-full p-2 border border-gray-300 rounded text-black"
+        className="w-full p-2 border border-gray-300 rounded text-black max-sm:text-xs bg-white/20 backdrop-blur-lg focus:outline-none focus:border-pokemon-blue focus:shadow-md"
       />
 
       {isLoading && debouncedSearch && (
