@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Pokémon Games Essentials",
     description:
       "Discover key Pokémon games by generation. Explore classic and modern titles in this visual Pokédex experience.",
-    // url: "https://poke-api.com/games",
+    url: "https://pokefronted.netlify.app/games",
     siteName: "Pokémon Explorer",
     locale: "en_US",
     type: "website",

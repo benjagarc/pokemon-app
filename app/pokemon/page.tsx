@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "All Pokémon | Pokédex App",
     description:
       "Explore every Pokémon in the Pokédex. View details, search by name, and manage your favorites.",
-    // url: "https://poke-api.com/favorites",
+    url: "https://pokefronted.netlify.app/pokemon",
     siteName: "Pokédex App",
     type: "website",
   },

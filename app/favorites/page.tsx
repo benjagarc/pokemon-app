@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     title: "Your Favorite Pokémon",
     description:
       "Explore the Pokémon you've marked as favorites in your personal Pokédex.",
-    // url: "https://poke-api.com/favorites",
+    url: "https://pokefronted.netlify.app/favorites",
     siteName: "Pokédex App",
     type: "website",
-  }, 
+  },
 };
 export default function FavoritesPage() {
   return (

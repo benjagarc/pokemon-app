@@ -21,18 +21,18 @@ export const metadata: Metadata = {
     "Framer Motion",
     "Tailwind CSS Pokémon",
   ],
-  metadataBase: new URL("https://poke-api.com/"), // cambia esto a tu dominio real
+  metadataBase: new URL("https://pokefronted.netlify.app/"), // cambia esto a tu dominio real
   openGraph: {
     title: "Pokémon Explorer",
     description:
       "Dive into a stylish Pokédex powered by Next.js and PokéAPI. Explore characters, games, and favorites!",
-    // url: "https://poke-api.com",
+    url: "https://pokefronted.netlify.app",
     siteName: "Pokédex App",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/pokemon-log.png",
+        width: 500,
+        height: 180,
         alt: "Pokémon Explorer",
       },
     ],
@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     title: "Pokémon Explorer",
     description:
       "A beautifully animated Pokédex app built with Next.js, Tailwind, and PokéAPI.",
-    images: ["/og-image.png"],
+    images: ["/pokemon-logo.png"],
   },
   icons: {
-    icon: "/favicon.png"
-  }
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

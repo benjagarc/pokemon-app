@@ -35,6 +35,7 @@ export async function generateMetadata({
     openGraph: {
       title: `#${pokemon.id} ${pokemon.name} | Pokédex App`,
       description: pokemon.description,
+      url: `https://pokefronted.netlify.app/pokemon/${pokemon.name}`,
       images: [
         {
           url: pokemon.image,
