@@ -28,9 +28,8 @@ export const GameCard: FC<GameCardProps> = ({ game, index }) => {
           <Image
             src="/pokemon-logo.png"
             alt="Pokébola"
-            fill
             className="object-contain opacity-800"
-            priority={index < 3}
+            priority={index && index < 3 ? true : undefined}
           />
         </div>
 
