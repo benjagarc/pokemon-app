@@ -17,6 +17,7 @@ A modern, animated Pokémon app built with **Next.js**, **TypeScript**, **Tailwi
 - 📱 Fully responsive + mobile-friendly layout
 - 🌈 Glassmorphism + pixel-art inspired design
 - 📦 Uses PokéAPI v2 for all data
+- ✅ Component testing with React Testing Library
 
 ---
 
@@ -28,6 +29,7 @@ A modern, animated Pokémon app built with **Next.js**, **TypeScript**, **Tailwi
 - **State/Data**: React Query (TanStack)
 - **Animations**: Framer Motion
 - **Deployment**: Netlify
+- **Testing**: React Testing Library
 
 ---
 
@@ -61,4 +63,14 @@ npm run dev
 yarn dev
 
 pnpm dev
+```
+
+### 4. Run test
+
+```bash
+npm run test
+
+yarn test
+
+pnpm test
 ```
