@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     siteName: "Pokémon Explorer",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/pokemon-logo.png",
+        width: 500,
+        height: 180,
+        alt: "Pokémon Explorer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

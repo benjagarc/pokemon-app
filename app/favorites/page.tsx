@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     url: "https://pokefronted.netlify.app/favorites",
     siteName: "Pokémon App",
     type: "website",
+    images: [
+      {
+        url: "/pokemon-logo.png",
+        width: 500,
+        height: 180,
+        alt: "Pokémon Explorer",
+      },
+    ],
   },
 };
 export default function FavoritesPage() {

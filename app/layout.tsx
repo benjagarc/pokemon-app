@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Pokémon App",
     images: [
       {
-        url: "/pokemon-log.png",
+        url: "/pokemon-logo.png",
         width: 500,
         height: 180,
         alt: "Pokémon Explorer",

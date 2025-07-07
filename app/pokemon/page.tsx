@@ -19,10 +19,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "All Pokémon | Pokémon App",
     description:
-      "Explore every Pokémon in the Pokémon. View details, search by name, and manage your favorites.",
+      "Explore every Pokémon. View details, search by name, and manage your favorites.",
     url: "https://pokefronted.netlify.app/pokemon",
     siteName: "Pokémon App",
     type: "website",
+    images: [
+      {
+        url: "/pokemon-logo.png",
+        width: 500,
+        height: 180,
+        alt: "Pokémon Explorer",
+      },
+    ],
   },
   robots: {
     index: true,
