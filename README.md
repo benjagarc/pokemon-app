@@ -23,7 +23,7 @@ A modern, animated Pokémon app built with **Next.js**, **TypeScript**, **Tailwi
 
 ## 🧱 Tech Stack
 
-- **Framework**: [Next.js 14](https://nextjs.org/)
+- **Framework**: [Next.js 15](https://nextjs.org/)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **State/Data**: React Query (TanStack)
