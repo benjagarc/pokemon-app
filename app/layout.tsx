@@ -10,7 +10,7 @@ const pixelFont = Press_Start_2P({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
   title: "Pokémon Explorer | Discover Your Favorite Pokémon",
   description:
-    "Explore the Pokémon world with a stunning Pokédex interface. View Pokémon details, filter by name, mark your favorites, and check game essentials. Powered by PokéAPI.",
+    "Explore the Pokémon world with a stunning Pokémon interface. View Pokémon details, filter by name, mark your favorites, and check game essentials. Powered by PokéAPI.",
   keywords: [
     "Pokémon",
     "Pokedex",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pokémon Explorer",
     description:
-      "Dive into a stylish Pokédex powered by Next.js and PokéAPI. Explore characters, games, and favorites!",
+      "Dive into a stylish Pokémon powered by Next.js and PokéAPI. Explore characters, games, and favorites!",
     url: "https://pokefronted.netlify.app",
-    siteName: "Pokédex App",
+    siteName: "Pokémon App",
     images: [
       {
         url: "/pokemon-log.png",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pokémon Explorer",
     description:
-      "A beautifully animated Pokédex app built with Next.js, Tailwind, and PokéAPI.",
+      "A beautifully animated Pokémon app built with Next.js, Tailwind, and PokéAPI.",
     images: ["/pokemon-logo.png"],
   },
   icons: {

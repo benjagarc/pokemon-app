@@ -4,11 +4,11 @@ type params = Promise<{ page: string }>;
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pokémon List | Pokédex App",
+  title: "Pokémon List | Pokémon App",
   description:
-    "Browse all Pokémon from the official Pokédex. Discover their types, stats, and mark your favorites.",
+    "Browse all Pokémon from the official Pokémon. Discover their types, stats, and mark your favorites.",
   keywords: [
-    "pokédex",
+    "Pokémon",
     "pokemon list",
     "all pokemon",
     "nextjs pokedex",
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     "react pokémon app",
   ],
   openGraph: {
-    title: "All Pokémon | Pokédex App",
+    title: "All Pokémon | Pokémon App",
     description:
-      "Explore every Pokémon in the Pokédex. View details, search by name, and manage your favorites.",
+      "Explore every Pokémon in the Pokémon. View details, search by name, and manage your favorites.",
     url: "https://pokefronted.netlify.app/pokemon",
-    siteName: "Pokédex App",
+    siteName: "Pokémon App",
     type: "website",
   },
   robots: {

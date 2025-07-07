@@ -1,6 +1,6 @@
 # Pokémon Explorer 🧭
 
-A modern, animated Pokédex built with **Next.js**, **TypeScript**, **Tailwind CSS**, **React Query**, and **Framer Motion**. It consumes data from the official [PokéAPI](https://pokeapi.co) and provides a smooth, interactive experience for exploring Pokémon and games across generations.
+A modern, animated Pokémon app built with **Next.js**, **TypeScript**, **Tailwind CSS**, **React Query**, and **Framer Motion**. It consumes data from the official [PokéAPI](https://pokeapi.co) and provides a smooth, interactive experience for exploring Pokémon and games across generations.
 
 > 🚀 Live demo: [https://pokefronted.netlify.app/](https://pokefronted.netlify.app/)
 
@@ -37,7 +37,7 @@ A modern, animated Pokédex built with **Next.js**, **TypeScript**, **Tailwind C
 
 Create a .env file in the root of the project with the following content:
 
-```bash 
+```bash
 npm install
 
 yarn install

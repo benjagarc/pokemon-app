@@ -5,7 +5,7 @@ type params = Promise<{ page: string }>;
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pokémon Games | Pokédex App",
+  title: "Pokémon Games | Pokémon App",
   description:
     "Explore the most iconic Pokémon game versions across generations. Browse through essential titles like Red, Blue, Gold, Sword & Shield, and more.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pokémon Games Essentials",
     description:
-      "Discover key Pokémon games by generation. Explore classic and modern titles in this visual Pokédex experience.",
+      "Discover key Pokémon games by generation. Explore classic and modern titles in this visual Pokémon experience.",
     url: "https://pokefronted.netlify.app/games",
     siteName: "Pokémon Explorer",
     locale: "en_US",

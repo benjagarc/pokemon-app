@@ -30,10 +30,10 @@ export async function generateMetadata({
   }
 
   return {
-    title: `#${pokemon.id} ${pokemon.name} | Pokédex App`,
+    title: `#${pokemon.id} ${pokemon.name} | Pokémon App`,
     description: pokemon.description,
     openGraph: {
-      title: `#${pokemon.id} ${pokemon.name} | Pokédex App`,
+      title: `#${pokemon.id} ${pokemon.name} | Pokémon App`,
       description: pokemon.description,
       url: `https://pokefronted.netlify.app/pokemon/${pokemon.name}`,
       images: [
