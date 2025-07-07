@@ -34,7 +34,7 @@ export const Navbar = () => {
           }}
           className="text-xl font-bold tracking-wide drop-shadow-md"
         >
-          Pokédex App
+          Pokémon
         </Link>
 
         {/* Desktop nav */}
